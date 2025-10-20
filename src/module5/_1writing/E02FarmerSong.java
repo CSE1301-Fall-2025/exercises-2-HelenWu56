@@ -6,11 +6,14 @@ package module5._1writing;
  * the main method to call the refrain method when needed.
  */
 public class E02FarmerSong {
+	public static void refrain(){
+		System.out.println("The farmer in the dell");
+	}
 
 	public static void main(String[] args) {
-		System.out.println("The farmer in the dell");
-		System.out.println("The farmer in the dell");
+		refrain();
+		refrain();
 		System.out.println("Hi-ho the derry-o");
-		System.out.println("The farmer in the dell");
+		refrain();
 	}
 }

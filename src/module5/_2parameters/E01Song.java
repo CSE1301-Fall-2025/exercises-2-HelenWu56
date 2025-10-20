@@ -21,8 +21,12 @@ public class E01Song {
 	}
 
 	public static void main(String[] args) {
+		//example of method parameter
+		//pay attention to the order, type and number of parameters
 		verse( "cow" , "moo" );
 		verse( "duck" , "quack" );
+		verse( "cat" , "meow" );
+		verse("dog", "bark");
 	}
 }
 

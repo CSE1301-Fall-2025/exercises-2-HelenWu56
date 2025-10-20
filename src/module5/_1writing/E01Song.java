@@ -18,9 +18,11 @@ public class E01Song {
 		System.out.println();
 		System.out.println("No need explaining, the one remaining");
 		System.out.println("Is somebody I adore");
-		// Can you replace these 2 lines with a method call to chorus()?
-		System.out.println("I'm looking over a four-leaf clover");
-		System.out.println("That I overlooked before");
+		// Can you replace these 2 repetitive lines with a method call to chorus()?
+		chorus();
+		//System.out.println("I'm looking over a four-leaf clover");
+		//System.out.println("That I overlooked before");
+
 	}
 }
 

@@ -30,5 +30,29 @@ public class E01Stats {
 		while(in.hasNextDouble()) {
 			System.out.println(in.nextDouble());
 		}
+
+		double min = 1000000000;
+		double max = 0;
+		double total = 0;
+		int count = 0;
+
+		while(in.hasNextDouble()) {
+			double number = in.nextDouble();
+			if (min > number){
+				min = number;
+			}
+			if (max < number){
+				max = number;
+			}
+			total += number;
+			count++;
+		}
+
+		double average = total/count;
+		System.out.println("Max: " + max);
+		System.out.println("Min: " + min);
+		System.out.println("Average: " + average);
+		System.out.println("Number of values in file: " + count);
+		in.close();
 	}
 }

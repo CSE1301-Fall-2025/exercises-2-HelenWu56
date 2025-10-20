@@ -9,7 +9,7 @@ The methods you should write:
 
  * Now go back and rewrite your first method by having it call the second one.
 
- * Take a look at Java’s `split method, that splits a ``String`` into an array containing the parts split by the specified regular expression.
+ * Take a look at Java's split method, that splits a ``String`` into an array containing the parts split by the specified regular expression.
 
 	Here, assume the regular expression is simply " ", so that the input String is split into words.
 
@@ -23,14 +23,32 @@ The methods you should write:
 public class StringMethods {
 
 	public static String selfConcat(String s) {
-		return s + s;
+		//return s + s;
+		return copies(s,2);
+	}
+
+	public static String copies(String s, int n){
+		String[] copiesArray = new String[n];
+		for (int i = 0; i < copiesArray.length; i++){
+			copiesArray[i] = s;
+		}
+		return join(copiesArray, "");
+	}
+
+	public static String join(String[] array, String joiner){
+		String newString = "";
+		for (int i = 0; i < array.length-1; i++){
+			newString = newString + array[i] + joiner;
+		}
+		newString = newString + array[array.length - 1];
+		return newString;
 	}
 
 	public static void main(String[] args) {
-
-		//
 		// Testing the methods
-		//
 		System.out.println(selfConcat("echo"));
+		System.out.println(copies("happy", 6));
+		String[] array = {"h", "a", "p", "p", "y"};
+		System.out.println(join(array, " "));
 	}
 }
