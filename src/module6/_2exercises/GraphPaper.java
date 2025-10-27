@@ -7,26 +7,31 @@ import edu.princeton.cs.introcs.StdDraw;
 public class GraphPaper {
 
 	/**
-	 * Process one layer of the graph paper
+	 * Process one layer of the graph paper: divide & conquer problem
 	 * @param llx lower-left-hand corner x coordinate
 	 * @param lly lower-left-hand corner y coordinate
 	 * @param size length and height of the current square
 	 */
 	public static void gp(double llx, double lly, double size) {
 		// base case, stop when the size is sufficiently small
-		if (size < .05) {
+		if (size < .05) { //base case: the smaller the number, the deeper the grid
 			return;  // abandon recursion
 		}
 		// draw one horizontal and one vertical line to quadrisect
 		//  the square (divide into 4 portions). Your code goes
 		//  below here:
 		//
-		
+		else{
+			//StdDraw.line(0.5, 0, 0.5, 1);
+			//StdDraw.line(0, 0.5, 1, 0.5);
+			StdDraw.line(llx + (size/2), lly, llx + (size/2), lly + size);
+			StdDraw.line(llx, lly + (size/2), llx + size, lly + (size/2));
+		}
 		// 
 		// Now, after you have drown athose two lines,
 		// let's pause to accentuate the recursive drama
 		//
-		StdDraw.pause(500);
+		StdDraw.pause(500); //the lower the number, the faster the operation
 		//
 		//
 		// Now recursively consider the
@@ -34,7 +39,10 @@ public class GraphPaper {
 		//   subcases
 		//   Your code for those subcases should go below here:
 		//
-
+		gp(llx, lly, size/2); //low left
+		gp(llx, lly + (size/2), size/2); //upper left
+		gp(llx + (size/2), lly + (size/2), size/2); //upper right
+		gp(llx + (size/2), lly, size/2); // lower right
 		
 	}
 
